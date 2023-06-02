@@ -1,0 +1,12 @@
+on:
+  push:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: "Print GitHub context as JSON"
+      env:
+        GITHUB_CONTEXT: ${{ toJSON(github) }}
+      run: echo $GITHUB_CONTEXT
